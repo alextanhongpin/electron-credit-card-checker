@@ -2,14 +2,77 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Credit Card Scanner</title>
+    <style>
+    
+      body {
+        text-align: center;
+        background: #DEEFFF;
+      }
+
+      #main {
+        font-family: Helvetica;
+      }
+      label {
+        font-weight: bold;
+        min-width: 160px;
+        display: inline-block;
+        text-align: right;
+        font-size: 14px;
+      }
+
+      input {
+        border: none;
+        width: 200px;
+        height: 24px;
+        margin: 0 0 5px 0;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+
+    <div id="main">
+
+      <p>
+      Is this credit card in a hacker's database?
+
+      You can easily find out now! All you need to do is enter its information here and we will scan thousands of hacker databases to see if any they have match yours.
+
+      </p>
+      <div>
+        <label for="">Credit Card Number:</label>
+        <input type="text">
+      </div>
+
+      <div>
+        <label for="">Expiration Date:</label>
+        <input type="text">
+      </div>
+
+      <div>
+        <label for="">Your Zip Code:</label>
+        <input type="text">
+      </div>
+
+      <div>
+        <button>SCAN DATABASE</button>
+      </div>
+    </div>
+
+<!--
+    <div>
+      Scanning databases...
+
+      <div>
+        progress
+      </div>
+      Now scanning database 1343 of 3728. 0 matches found.
+    </div>
+
+    <div>
+      Your card number did not show up in any of the hacker's database!
+    </div>-->
   </body>
 
   <script>
