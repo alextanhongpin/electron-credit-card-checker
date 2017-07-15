@@ -1,45 +1,56 @@
-# electron-quick-start
 
-**Clone and run for a quick way to see Electron in action.**
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start) within the Electron documentation.
 
-**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) app for API code examples to help you get started.**
+Most credit cards should contain either 15 or 16 digits.
 
-A basic Electron application needs just these files:
+## Payment Details
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+Card Number: 4242 4242 4242 4242
+Expiry Date: Month/Year
+CV Code: 123
 
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/tutorial/quick-start).
+## Types of credit card
+1. American Express (Starts with 3)
+2. Bank of America
+3. BarclayCard US
+4. Capital One
+5. Chase
+6. Citibank
+7. Discover (Starts with 6)
+8. MasterCard (Starts with 5)
+9. PNC
+10. USAA
+11. U.S. Bank
+12. Visa (Starts with 4)
+13. Wells Fargo
 
-## To Use
+## Major Industry Identifier
+The first digit is the Major Industry Identifier
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+1 and 2 - Airlines
+3 - Travel and entertainment
+4 and 5 - Banking and Financial
+6 - Merchandizing and Banking
+7 - Petroleum
+8 - Telecommunications
+9 - National Assignments
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
+## Issuer Identification Number
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+The first 6 digits are the Issuer Identification Number. It will identify the institution that issued the card.
 
-## Resources for Learning Electron
 
-- [electron.atom.io/docs](http://electron.atom.io/docs) - all of Electron's documentation
-- [electron.atom.io/community/#boilerplates](http://electron.atom.io/community/#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+Visa: 4xxxxx
+Mastercard: 51xxxx - 55xxxx
+Discover: 6011xx, 644xxx, 65xxxx
+Amex: 34xxxx, 37xxxx
 
-## License
+Card can be looked up by their IIN. A card that starts with 376211 is a Singapore Airliner Krisflyer American Express Gold Card.
+ 529962 designates a pre-paid Much-Music MasterCard.
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+Source of IIN: http://www.stevemorse.org/ssn/List_of_Bank_Identification_Numbers.html
+
+## Luhn algorithm
+
+The Luhn algorithm was developed by German computer scientist Hans Peter Luhn in 1954. It calculates simple checksum formula used to validate identification numbers such as credit card numbers. The algorithm was designed to protect against accidental errors, such as a digit mistyping. It will detect any single-digit error, as well as almost all transpositions of adjacent digits. It will not, however, detect transposition of the two-digit sequence 09 to 90 (or vice versa).
+The calculator below gives Luhn checksum of the given digit sequence. The sequence is considered valid if the checksum mod 10 equals to zero. It also gives the next check digit to be appended at the end of source sequence to form valid number according Luhn algorithm.
