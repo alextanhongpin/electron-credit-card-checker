@@ -1,0 +1,110 @@
+
+.cc {
+    background: url(../../assets/icon_flags.png);
+    height: 24px;
+    width: 35px;
+    background-size: 290px 194px;
+}
+/* Column 1 */
+/*Discover Color*/
+.cc-100 {
+    background-position: -23px -11px;
+}
+.cc-101 {
+    background-position: -23px -49px;
+}
+.cc-discover-100 {
+    background-position: -23px -85px;
+}
+.cc-mastercard-100 {
+    background-position: -23px -122px;
+}
+
+.cc-paypal-100 {
+    background-position: -23px -159px;
+}
+
+/* Columm 2 */
+.cc-amazon-100 {
+    background-position: -75px -11px;
+}
+.cc-200 {
+    background-position: -75px -49px;
+}
+
+.cc-discover-200 {
+    background-position: -75px -85px;
+}
+
+.cc-maestro-100 {
+    background-position: -75px -122px;
+}
+
+.cc-201 {
+    background-position: -75px -159px;
+}
+
+/* Columm 3 */
+.cc-amazon-200 {
+    background-position: -127px -11px;
+}
+.cc-apple-100 {
+    background-position: -127px -49px;
+}
+
+.cc-visa-100 {
+    background-position: -127px -85px;
+}
+
+.cc-maestro-200 {
+    background-position: -127px -122px;
+}
+
+.cc-300 {
+    background-position: -127px -159px;
+}
+
+/* Columm 4 */
+/*Amex*/
+.cc-amex {
+    background-position: -180px -11px;
+}
+/*Apple*/
+.cc-apple-200 {
+    background-position: -180px -49px;
+}
+/*Visa*/
+.cc-visa-200 {
+    background-position: -180px -85px;
+}
+/*Paypal Light*/
+.cc-paypal-200 {
+    background-position: -180px -122px;
+}
+
+.cc-400 {
+    background-position: -180px -159px;
+}
+
+
+/* Columm 5 */
+/*American Express*/
+.cc-american-express {
+    background-position: -232px -11px;
+}
+/*Discover Light*/
+.cc-discover-300 {
+    background-position: -232px -49px;
+}
+/*Master Card*/
+.cc-mastercard-200 {
+    background-position: -232px -85px;
+}
+/*Paypal Dark*/
+.cc-paypal-300 {
+    background-position: -232px -122px;
+}
+
+.cc-500 {
+    background-position: -232px -159px;
+}

@@ -1,0 +1,58 @@
+
+.cc {
+    background: url(../../assets/credit_48px.jpg);
+    height: 28px;
+    width: 40px;
+    background-size: 597px 589px;
+    display: inline-block;
+}
+
+.cc.is-disabled {
+    filter: grayscale(1);
+    opacity: .5;
+}
+.cc-american-express {
+    background-position: -243px -18px;
+}
+.cc-china-unionpay {
+    background-position: -14px -167px;
+}
+.cc-diners {
+    background-position: -319px -167px;
+}
+.cc-discover {
+    background-position: -395px -167px;
+}
+.cc-jcb {
+    background-position: -91px -318px;
+}
+.cc-laser {
+    background-position: -167px -318px;
+}
+.cc-maestro {
+    background-position: -243px -318px;
+}
+
+
+.cc-mastercard {
+    background-position: -318px -318px;
+}
+.cc-solo {
+    background-position: -547px -393px;
+}
+.cc-switch {
+    background-position: -15px -468px;
+}
+.cc-visa {
+    background-position: -167px -468px;
+}
+/*.cc-uatp {
+    background-position: 0 0;
+}*/
+/*.cc-verve {
+    background-position: 0 0;
+}
+.cc-troy {
+    background-position: 0 0;
+}*/
+      
