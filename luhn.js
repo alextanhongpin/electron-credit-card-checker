@@ -40,6 +40,7 @@ function luhn (n) {
   const finalSum = checkDigit + sumOfNonCheckDigits
   return finalSum % 10 === 0
 }
+
 console.log(tests.map(luhn))
 
 tests.forEach((n) => {
