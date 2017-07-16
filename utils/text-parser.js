@@ -1,20 +1,22 @@
 
 const fs = require('fs')
 
-fs.readFile('text.txt', 'utf-8', (err, file) => {
-  const lines = file.split('\n')
-  const output = lines.map((line) => {
-    return line.replace('(', '').replace(')', '').split(/\s([0-9*]+)$/img).filter(x => x.length)
-  }).filter((x) => x.length)
-  .reduce((obj, x) => {
-    if (!obj[x[0]]) {
-      obj[x[0]] = []
-    }
-    obj[x[0]].push(x[1])
-    return obj
-  }, {})
+const industry = require('../data/industry.json')
 
-  fs.writeFile('data/industry.json', JSON.stringify({data: output}), 'utf-8', (err, ok) => {
-    console.log('wrote file successfully')
-  })
+const output = Object.keys(industry.data).reduce((arr, key) => {
+  return arr.concat([{
+    issuer_identification_number: industry.data[key],
+    name: key,
+    iin: industry.data[key].map((i) => {
+      return i.replace(/\*+/ig, '')
+    }).map((i) => parseInt(i, 10))
+  }])
+}, [])
+
+console.log(output)
+
+fs.writeFile('data/industry.v2.json', JSON.stringify({
+  data: output
+}), 'utf-8', (err, ok) => {
+  console.log(err, ok)
 })
