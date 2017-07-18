@@ -46,3 +46,5 @@ console.log(tests.map(luhn))
 tests.forEach((n) => {
   console.log(n, luhn(n) ? 'is valid' : 'is not valid')
 })
+
+module.exports = luhn

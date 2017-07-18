@@ -5,11 +5,16 @@
     width: 40px;
     background-size: 597px 589px;
     display: inline-block;
-}
 
-.cc.is-disabled {
     filter: grayscale(1);
     opacity: .5;
+    transition: .174s all ease-out;
+}
+
+.cc.is-active {
+
+    filter: none;
+    opacity: 1;
 }
 .cc-american-express {
     background-position: -243px -18px;

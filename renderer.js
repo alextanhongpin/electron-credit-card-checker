@@ -1,13 +1,17 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
+const {clipboard} = require('electron')
 
 const utils = require('./test.js')
+const luhn = require('./luhn.js')
 const Model = {}
 const View = {
   ids: [
     'creditCardNumber',
-    'output'
+    'output',
+    'randomize',
+    'copy'
   ],
   classNames: ['cc'],
   data: {},
@@ -47,16 +51,51 @@ class Controller {
     this.bindEvents()
   }
   bindEvents () {
-    this.view.getId('creditCardNumber').addEventListener('keyup', (evt) => {
-      const value = evt.currentTarget.value
-      console.log(utils(value))
-      const issuer = utils(value) ? utils(value).issuing_network : ''
-      const className = issuer.toLowerCase().split(' ').join('-')
+    this.view.getId('randomize').addEventListener('click', (evt) => {
+      let creditCardNumber = Math.floor(Math.random() * 9999999999999999)
+
+      while (!luhn(creditCardNumber)) {
+        creditCardNumber = Math.floor(Math.random() * 9999999999999999)
+      }
+
+      this.view.getId('creditCardNumber').value = creditCardNumber
+      // console.log(utils(creditCardNumber))
+      const issuer = utils(creditCardNumber.toString()) ? utils(creditCardNumber.toString()).issuing_network : ''
+      const preMappedValue = issuer.toLowerCase().split(' ').join('-')
+      let className = preMappedValue
+
+      if (className.indexOf('diners') !== -1) {
+        className = 'diners'
+      }
       this.view.getClassName('cc').forEach((el) => {
         if (el.classList.contains(`cc-${className}`)) {
-          el.classList.remove('is-disabled')
+          el.classList.add('is-active')
         } else {
-          el.classList.add('is-disabled')
+          el.classList.remove('is-active')
+        }
+      })
+      this.view.getId('output').innerHTML = issuer
+    }, false)
+
+    this.view.getId('copy').addEventListener('click', (evt) => {
+      clipboard.writeText(this.view.getId('creditCardNumber').value)
+    }, false)
+
+    this.view.getId('creditCardNumber').addEventListener('keyup', (evt) => {
+      const value = evt.currentTarget.value
+
+      const issuer = utils(value) ? utils(value).issuing_network : ''
+      const preMappedValue = issuer.toLowerCase().split(' ').join('-')
+      let className = preMappedValue
+
+      if (className.indexOf('diners') !== -1) {
+        className = 'diners'
+      }
+      this.view.getClassName('cc').forEach((el) => {
+        if (el.classList.contains(`cc-${className}`)) {
+          el.classList.add('is-active')
+        } else {
+          el.classList.remove('is-active')
         }
       })
 

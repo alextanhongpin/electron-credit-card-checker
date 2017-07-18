@@ -3,17 +3,35 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const TouchBar = electron.TouchBar
 
+const {TouchBarLabel, TouchBarButton, TouchBarSpacer} = TouchBar
 const path = require('path')
 const url = require('url')
 
+const spin = new TouchBarButton({
+  // label: 'hello',
+  // backgroundColor: '#7851A9',
+  icon: './assets/solo.ico',
+  click () {
+    console.log('hello')
+  }
+})
+const touchBar = new TouchBar([
+  spin
+])
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600
+    // titleBarStyle: 'hiddenInset'
+    // frame: false
+  })
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -21,6 +39,8 @@ function createWindow () {
     protocol: 'file:',
     slashes: true
   }))
+
+  // mainWindow.setTouchBar(touchBar)
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

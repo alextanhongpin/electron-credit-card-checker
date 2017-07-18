@@ -8,7 +8,6 @@
     
       body {
         text-align: center;
-        background: #DEEFFF;
       }
 
       #main {
@@ -23,7 +22,6 @@
       }
 
       input {
-        border: none;
         width: 200px;
         height: 24px;
         margin: 0 0 5px 0;
@@ -33,109 +31,36 @@
   </head>
   <body>
 
-    <div id="output"></div>
     <div id="main">
 
-
-      American Express
-      <div class='cc cc-american-express'></div>
-
-      Bankcard
-      <div>None</div>
-
-      China UnionPay
-      <div class='cc cc-china-unionpay'></div>
-
-      Diners
-      <div class='cc cc-diners'></div>
-
-      Discover
-      <div class='cc cc-discover'></div>
-
-      <!--InterPayment
-      <div class='cc cc-interpayment'>None</div>
-
-      Instapayment
-      <div class='cc cc-interpayment'>None</div>-->
-      
-      JCB
-      <div class='cc cc-jcb'></div>
-
-      Laser
-      <div class='cc cc-laser'></div>
-      
-      Maestro
-      <div class='cc cc-maestro'></div>
-      
-      <!--Dankort
-      <div class='cc cc-dankort'></div>
-
-      MIR
-      <div class='cc cc-mir'>None</div>
-      -->
-
-      Mastercard
-      <div class='cc cc-mastercard'></div>
-
-      Solo
-      <div class='cc cc-solo'></div>
-      
-      Switch
-      <div class='cc cc-switch'></div>
-      
-      
-      Visa
-      <div class='cc cc-visa'></div>
-      <!--UATP
-      <div class='cc cc-uatp'></div>
-      
-      verve
-      <div class='cc cc-verve'></div>
-      troy
-      <div class='cc cc-troy'></div>
-      -->
+      <div class='cc cc-american-express' title='American Express'></div>
+      <div class='cc cc-china-unionpay' title='China UnionPay'></div>
+      <div class='cc cc-diners' title='Diners'></div>
+      <div class='cc cc-discover' title='Discover'></div>
+      <div class='cc cc-jcb' title='JCB'></div>
+      <div class='cc cc-laser' title='Laser'></div>
+      <div class='cc cc-maestro' title='Maestro'></div>
+      <div class='cc cc-mastercard' title='Mastercard'></div>      
+      <div class='cc cc-solo' title='Solo'></div>
+      <div class='cc cc-switch' title='Switch'></div>
+      <div class='cc cc-visa' title='Visa'></div>
 
    
+    <div id="output">You are using the card</div>
 
       <p>
-      Is this credit card in a hacker's database?
-
-      You can easily find out now! All you need to do is enter its information here and we will scan thousands of hacker databases to see if any they have match yours.
-
+        Generate a valid credit card number.
       </p>
       <div>
         <label for="">Credit Card Number:</label>
-        <input type="text" id="creditCardNumber">
+        <input type="number" id="creditCardNumber">
+        <button id="copy">Copy</button>
       </div>
 
       <div>
-        <label for="">Expiration Date:</label>
-        <input type="text">
-      </div>
-
-      <div>
-        <label for="">Your Zip Code:</label>
-        <input type="text">
-      </div>
-
-      <div>
-        <button>SCAN DATABASE</button>
+        <button id="randomize">Generate</button>
       </div>
     </div>
-
-<!--
-    <div>
-      Scanning databases...
-
-      <div>
-        progress
-      </div>
-      Now scanning database 1343 of 3728. 0 matches found.
-    </div>
-
-    <div>
-      Your card number did not show up in any of the hacker's database!
-    </div>-->
   </body>
 
   <script>
